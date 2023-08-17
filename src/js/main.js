@@ -45,5 +45,8 @@ cuerpo[0].addEventListener("click", (e) => {
         case "exit":
             logOut ();
             break;
+        case "about":
+            makeItHapend ();
+            break;    
     }
 });

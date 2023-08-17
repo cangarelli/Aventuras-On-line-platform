@@ -8,7 +8,7 @@
 
     &__form {
         @include templateFlex (column, center, true);
-     
+
         &--div  {
             @include templateFlex (column, center, true);
             margin: 5px 0;
@@ -16,6 +16,7 @@
             input{
                 border: 2px solid $font-lapiz;
                 transition: border 0.5s;
+                padding: 5%;
                 margin-left: 4px;
             }
             input:focus {
@@ -23,17 +24,37 @@
             }
         }
         &--fin {
-            @include templateFlex (column, center, true);
-            margin: 5px 0;
+            @include templateFlex (row, center, true);
+            margin: 5px 0px;
             label {
                 text-align: center;
             }
             input{
                 padding: 5%;
+                margin: 0px 10px;
                 border-radius: 5px;
             }
         }              
     }
+}
+.consola{
+    @extend .cardBox;
+    width: 95%;
+    min-width: 1024px;
+    max-width: 1100px;
+
+        &__menu {
+            @include templateFlex (column, space-between, true);
+            width: 95%;
+
+            &--icon{
+                max-width: 50px;
+                display: block;
+            }
+            &--icon:hover{
+                max-width: 45px;
+            }
+        }
 }
 
 @media (min-width: $bp-small) {

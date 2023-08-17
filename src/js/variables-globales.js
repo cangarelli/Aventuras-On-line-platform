@@ -5,4 +5,4 @@ let game = "";
 
 // NODOS globales
 const cuerpo = document.getElementsByTagName ("div");
-const grilla = document.getElementsByClassName ("crearCuenta__form--div");
+const grilla = document.getElementsByClassName ("container__form--div");

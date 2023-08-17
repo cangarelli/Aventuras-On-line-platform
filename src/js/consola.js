@@ -18,10 +18,11 @@ const CrearConsola = () => {
     const user = sesionLoad("usuarioLogueado");
     cuerpo[0].className = "consola";
     cuerpo[0].innerHTML = 
-    `<div class= "menu">
+    `<div class= "consola__menu">
         <h2>¡¡BIENVENIDO ${user.apodo.toUpperCase()}!!</h2>
         <div>
-           <img class="icon" id= "exit" src="./assets/img/sesion.png" alt="Desloguearme" />
+            <img class="consola__menu--icon" id= "about" src="./assets/img/icon-about.png" alt="Acerca del juego" /> 
+            <img class="consola__menu--icon" id= "exit" src="./assets/img/icon-key.png" alt="Desloguearme" />
         </div>
     </div>
     <div id="game"></div>`;
