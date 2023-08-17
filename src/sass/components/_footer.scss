@@ -1,0 +1,15 @@
+.foot {
+    @include templateFlex (column, center, true);
+    p{
+        color: $font-contraste;
+    } 
+    &--icon{
+        width: 10vw;
+        margin: 1vw;
+
+        @media (min-width: $bp-extrasmall) {
+            width: 30px;
+            margin: 15px;
+        }
+    }
+}

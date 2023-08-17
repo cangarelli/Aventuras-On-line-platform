@@ -1,0 +1,92 @@
+// Referencias para todo el sitio.
+*{
+    font-family: "gochihand";
+    font-size: $font-text;
+    color: $font-lapiz;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-repeat: no-repeat;
+}
+@font-face {
+    font-family: "gochihand";
+    src: url(../assets/fonts/GochiHand-Regular.ttf);
+}
+body {
+    background-color: rgb(192, 164, 140);
+    background-image: url(../assets/jpg/Fondo-pagina.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+main {
+    max-width: 100%;
+    margin: 0 auto;
+    @media (min-width: $bp-large) {
+        max-width: 960px ;
+    }
+    @media (min-width: $bp-xlarge) {
+        max-width: 1140px;
+    }
+    @media (min-width: $bp-xxlarge) {
+        max-width: 1320px;
+    }
+}
+a{
+    text-decoration: none;
+    color: $font-lapiz;
+}
+h1 {
+    font-size: $font-title;
+    text-align: center;
+}
+h2 {
+    font-size: $font-subTitle;
+    text-align: center;
+}
+// Extend
+.hojaMenu {
+    background-image: url(../assets/jpg/retazo-hoja-menu.jpg);
+    background-position: center;
+    background-attachment: local;
+}
+.hojaNotas{
+    background-image: url(../assets/jpg/hoja-cartulina-2.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.cardBox {
+    @extend .hojaNotas;
+    border-radius: 15px;
+    margin: 1% auto;
+    padding: 3%;
+    
+    box-shadow: 8px 8px 10px gray;
+}
+
+// Minxin 
+@mixin templateGrid ($colMobile, $colTablet, $colDeskop) {
+    display: grid;
+    grid-template-columns: repeat ($colMobile, 1fr);
+    column-gap: 20px;
+
+    // Vista tablet
+    @media (min-width: $bp-small) {
+        grid-template-columns: repeat ($colTablet, 1fr);
+    }
+
+    // vista desktop
+    @media (min-width: $bp-medium) {
+        grid-template-columns: repeat ($colDeskop, 1fr);
+    }
+}
+@mixin templateFlex($direction, $justify, $aling) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    
+    @if ($aling == true) {
+        align-items: center;
+    }
+}

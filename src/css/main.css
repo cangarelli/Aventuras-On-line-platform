@@ -1,0 +1,117 @@
+* {
+  font-family: "gochihand";
+  font-size: 16px;
+  color: gray;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: "gochihand";
+  src: url(../assets/fonts/GochiHand-Regular.ttf);
+}
+body {
+  background-color: rgb(192, 164, 140);
+  background-image: url(../assets/jpg/Fondo-pagina.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+main {
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  main {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  main {
+    max-width: 1320px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+h1 {
+  font-size: 26px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.hojaMenu {
+  background-image: url(../assets/jpg/retazo-hoja-menu.jpg);
+  background-position: center;
+  background-attachment: local;
+}
+
+.hojaNotas, .cardBox {
+  background-image: url(../assets/jpg/hoja-cartulina-2.jpg);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.cardBox {
+  border-radius: 15px;
+  margin: 1% auto;
+  padding: 3%;
+  box-shadow: 8px 8px 10px gray;
+}
+
+@keyframes ideas {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes ponerFoto {
+  from {
+    transform: rotate(0deg) translate(0px) scale(1);
+  }
+  to {
+    transform: rotate(20deg) translate(20px) scale(0.7);
+  }
+}
+.foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.foot p {
+  color: white;
+}
+.foot--icon {
+  width: 10vw;
+  margin: 1vw;
+}
+@media (min-width: 480px) {
+  .foot--icon {
+    width: 30px;
+    margin: 15px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
