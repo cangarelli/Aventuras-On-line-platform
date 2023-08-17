@@ -1,4 +1,4 @@
-.crearCuenta {
+.container {
     @extend .cardBox;
     max-width: 75%;
     img{
@@ -37,7 +37,7 @@
 }
 
 @media (min-width: $bp-small) {
-    .crearCuenta {
+    .container {
         max-width: 80%;
         &__form{
             margin: 5px 0;
@@ -55,7 +55,7 @@
     }
 }
 @media (min-width: $bp-medium) {
-    .crearCuenta {
+    .container {
         position: relative;
         img{
             display: inline-block;

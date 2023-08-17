@@ -22,6 +22,7 @@
 
     <!-- JavaSricpt Propio-->
     <script src="./js/variables-globales.js"></script>
+    <script src="./js/biblioteca-DOM.js"></script>
     <script src="./js/email-api.js"></script>
     <script src="./js/consola.js"></script>
     <script src="./js/Persona.js"></script>
@@ -34,20 +35,20 @@
   <body>
     <header></header>
     <main>
-      <div class="crearCuenta">
+      <div class="container">
         <h1>CURSO DE JAVASCRIPT.</h1>
         <h2>Garelli Carlos Andrés | Proyecto final</h2>
-        <form class="crearCuenta__form" action="php" method="post" enctype="text/plain">
+        <form class="container__form" action="php" method="post" enctype="text/plain">
           <h2>LOGUEATE Y EMPEZA TU AVENTURA.</h2>
-          <div class="crearCuenta__form--div">
+          <div class="container__form--div">
             <label for="correoIn">Correo Electronico</label>
             <input type="text" placeholder="inclui el @" id="correoIn" />
           </div>
-          <div class="crearCuenta__form--div">
+          <div class="container__form--div">
             <label for="contraseñaIn">Contraseña</label>
             <input type="password" placeholder="top secret" name="" id="contraseñaIn" />
           </div>
-          <section class="crearCuenta__form--fin">
+          <section class="container__form--fin">
             <input type="button" value="Registrarme" />
             <input type="button" value="Iniciar sesión" />
           </section>
