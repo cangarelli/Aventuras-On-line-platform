@@ -1,49 +1,88 @@
-//  FUNCIONES DE MENSAJE.
-const cartel = (mensaje) =>{
-  // CREAR BANNER
-  const banner = document.createElement ("section");
-  banner.className = "cartelito";
-  banner.id = "banner";
-  cuerpo[0].appendChild(banner);
-  const select = document.getElementById ("banner");
-  
-  //DECORANDING
-  const decoracion = document.createElement ("img");
-  decoracion.className = "cartelito__pin";
-  decoracion.src = fuente[0].dir;
-  select.appendChild (decoracion);
-  
-  // MENSAJES POSIBLES
-  if (mensaje == "bienvenida") {
-    const bienvenida = document.createElement ("p");
-    bienvenida.innerHTML = `Bienvenido ${directorio[parseInt(directorio.length-1)].apodo}. Ya registramos sus datos.`;
-    select.appendChild (bienvenida);
-  } else if (mensaje == "pantallaChica") {
-    const valor = sesionLoad("usuarioLogueado");
+// Accesorios globales
+const infoWindow = (father) =>{
+  const window = document.createElement ("section");
+  window.id = "windowPopUp";
+  window.className = "windowPopUp";
+  father.appendChild (window);
+};
+
+const contentWriter = (father, message) =>{
+  switch (message) {
+    case "bienvenida":
+      const bienvenida = document.createElement ("p");
+      bienvenida.innerHTML = `Bienvenido ${directorio[parseInt(directorio.length-1)].apodo}. Ya registramos sus datos.`;
+      father.appendChild (bienvenida);
+      break;
+    case "pantallaChica":
+      const valor = sesionLoad("usuarioLogueado");
  
-    const bienvenida = document.createElement ("h2");
-    bienvenida.innerHTML = `¡¡BIENVENIDO ${valor.apodo.toUpperCase()}!!`;
-    select.appendChild (bienvenida);
-    const lamentaciones = document.createElement ("p");
-    lamentaciones.innerHTML = `La consola esta disponible en pantallas que puedan soportar una resolución minima de 1100 x 576. Ingrese desde otro dispositivo`;
-    select.appendChild (lamentaciones);
-  
-   sessionStorage.removeItem ("usuarioLogueado");
-  }else {
-    // ACTUALIZAR DIRECTORIO
-    directorio = sesionLoad ("directory");
-    //CREAR MENSAJE
-    for (const renglon of mensaje) {
-      const agenda = document.createElement ("p");
-      agenda.innerHTML = `${renglon}`;
-      select.appendChild (agenda);
+      const welcome = document.createElement ("h2");
+      welcome.innerHTML = `¡¡BIENVENIDO ${valor.apodo.toUpperCase()}!!`;
+      father.appendChild (welcome);
+      const lamentaciones = document.createElement ("p");
+      lamentaciones.innerHTML = `La consola esta disponible en pantallas que puedan soportar una resolución minima de 1100 x 576. Ingrese desde otro dispositivo`;
+      father.appendChild (lamentaciones);
+    
+     sessionStorage.removeItem ("usuarioLogueado");
+    
+    break;
+    case "about":
+      father.width = 5000;
+      const content = document.createElement ("article");
+      content.className = "consola__window--content";
+      content.innerHTML = `<h2>CONCEPTO</h2>
+      <p>Hay diferentes formas de aventurarse. El juego propone dos.</p>
+      <p>La modalidad travesía invita a perseguir una meta gráfica y concreta para hacer carrera. Llegar antes es importante para ganarle al resto. </p>
+      <p>La modalidad petirrojo ofrece la posibilidad de afrontar un dilema adolescente. Tenes que elegir entre varias metas y poner el foco en las experiencias y las interacciones. ¿De qué manera vas a elegir vivir la aventura? ¿Vas a correr hasta el final o vas a detenerte para experimentar y compartir vivencias y aprendizajes? ¿Como sos? ¿Como queres ser?. </p>
+      <p>La dinámica del juego propone explorar aspectos, temáticas y situaciones típicas del desarrollo de las personas a lo largo de la infancia y la adolescencia. Resolviendo las diferentes consignas profundizaran en el conocimiento de sí mismos. También podrán desarrollar experiencias de dominio y maestría en el ámbito de lo corporal, la imaginación, el pensamiento y la socialización. Tendrán varias oportunidades para tomar decisiones importantes y para autodefinirse. Todos caminos destinados al fortalecimiento del sí mismo y la autoestima.</p>
+      <p>Las emociones son nuestra brújula para brindarnos lo que necesitamos en cada situación. Resolviendo consignas podrán explorar, definir y reflexionar sobre sus vivencias emocionales. Encaminarse a reconocer, apropiarse y modular la expresión de las emociones de una manera adaptativa compartiendo con otros.</p>
+      <p>Algunas consignas los invitaran a buscarle sentido a las cosas más cotidianas y otras no tanto. Seran Ocasiones para expresar sus ideas, desarrollar el pensamiento crítico y reflexionar sobre diferentes aspectos de la vida.</p>    
+      <p>Habra oportunidades y desafíos para Conocer el propio cuerpo y experimentar con sus posibilidades. Abrirse para ser y expresarse a través del cuerpo, liberarlo, es Una manera de habitarse. </p>   
+      <p>Para Violeta aventurarse es también reconectar consigo misma y tomar posición para vivir.</p>`;
+      father.appendChild (content);
+      break;
+    default:
+      // ACTUALIZAR DIRECTORIO
+      directorio = sesionLoad ("directory");
+      //CREAR MENSAJE
+      for (const renglon of message) {
+        const agenda = document.createElement ("p");
+        agenda.innerHTML = `${renglon}`;
+        father.appendChild (agenda);
+      };
+      break;
     };
-  }
-  // Boton de cierre.
+
+};
+
+const colocarPîn = (father) =>{
+  const decoracion = document.createElement ("img");
+  decoracion.className = "windowPopUp__pin";
+  decoracion.src = "./src/assets/png/Pin.png";
+  father.appendChild (decoracion);
+};
+
+const closeButton = (father) => {
   const boton = document.createElement ("button");
   boton.value = "salir";
   boton.innerHTML = `OK`;
-  select.appendChild (boton);
+  father.appendChild (boton);
+};
+
+//  FUNCIONES DE MENSAJE.
+const windowPopUp = (message) =>{
+  // CREAR BANNER
+  infoWindow (cuerpo[0]);
+  const select = document.getElementById ("windowPopUp");
+  
+  //DECORANDING
+  colocarPîn (select);
+
+  // MENSAJES POSIBLES
+  contentWriter (select, message);
+  
+  // Boton de cierre.
+  closeButton (select);
 };
 const alerta = (id, location, mensaje) =>{
     const spanAlert = document.createElement ("span");
@@ -115,34 +154,4 @@ const crearFormulario = (finalidad, limpieza) => {
 };
 
 // Desplegables del menu consola.
-const infoWindow = (father) =>{
-  const window = document.createElement ("section");
-  window.className = "";
-  window.width= " ";
-  window.height = "";
-  window.position = {x: canvas.width/2 , y:canvas.height/2};
-  father.appendChild (window);
-};
 
-const contentWriter = (father) =>{
-  const content = document.createComment ("article");
-  content.className = "";
-  content.innerHTML =
-  `<h2>CONCEPTO</h2>
-  <p>Hay diferentes formas de aventurarse. El juego propone dos.</p>
-  <p>La modalidad travesía invita a perseguir una meta gráfica y concreta para hacer carrera. Llegar antes es importante para ganarle al resto. </p>
-  <p>La modalidad petirrojo ofrece la posibilidad de afrontar un dilema adolescente. Tenes que elegir entre varias metas y poner el foco en las experiencias y las interacciones. ¿De qué manera vas a elegir vivir la aventura? ¿Vas a correr hasta el final o vas a detenerte para experimentar y compartir vivencias y aprendizajes? ¿Como sos? ¿Como queres ser?. </p>
-  <p>La dinámica del juego propone explorar aspectos, temáticas y situaciones típicas del desarrollo de las personas a lo largo de la infancia y la adolescencia. Resolviendo las diferentes consignas profundizaran en el conocimiento de sí mismos. También podrán desarrollar experiencias de dominio y maestría en el ámbito de lo corporal, la imaginación, el pensamiento y la socialización. Tendrán varias oportunidades para tomar decisiones importantes y para autodefinirse. Todos caminos destinados al fortalecimiento del sí mismo y la autoestima.</p>
-  <p>Las emociones son nuestra brújula para brindarnos lo que necesitamos en cada situación. Resolviendo consignas podrán explorar, definir y reflexionar sobre sus vivencias emocionales. Encaminarse a reconocer, apropiarse y modular la expresión de las emociones de una manera adaptativa compartiendo con otros.</p>
-  <p>Algunas consignas los invitaran a buscarle sentido a las cosas más cotidianas y otras no tanto. Seran Ocasiones para expresar sus ideas, desarrollar el pensamiento crítico y reflexionar sobre diferentes aspectos de la vida.</p>    
-  <p>Habra oportunidades y desafíos para Conocer el propio cuerpo y experimentar con sus posibilidades. Abrirse para ser y expresarse a través del cuerpo, liberarlo, es Una manera de habitarse. </p>   
-  <p>Para Violeta aventurarse es también reconectar consigo misma y tomar posición para vivir.</p>`;
-  father.appendChild (content);
-};
-
-const makeItHapend = (button) => {
-  const fatherConteiner = document.getElementsByClassName ("consola")
-  infoWindow(consola[0]);
-  const father = document.getElementsByTagName ("section");
-  contentWriter (father[0]);
-};

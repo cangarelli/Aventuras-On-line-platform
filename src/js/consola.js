@@ -21,8 +21,8 @@ const CrearConsola = () => {
     `<div class= "consola__menu">
         <h2>¡¡BIENVENIDO ${user.apodo.toUpperCase()}!!</h2>
         <div>
-            <img class="consola__menu--icon" id= "about" src="./assets/img/icon-about.png" alt="Acerca del juego" /> 
-            <img class="consola__menu--icon" id= "exit" src="./assets/img/icon-key.png" alt="Desloguearme" />
+            <img class="consola__menu--icon" id= "about" src="./src/assets/png/icon-about.png" alt="Acerca del juego" /> 
+            <img class="consola__menu--icon" id= "exit" src="./src/assets/png/icon-key.png" alt="Desloguearme" />
         </div>
     </div>
     <div id="game"></div>`;
@@ -31,8 +31,8 @@ const CrearConsola = () => {
 
 // JUEGO EN CONSTRUCCION
 function preload () {
-    this.load.image("lamento", "../assets/img/lamentacion.png")
-    this.load.image("engranaje", "../assets/img/config2.png")
+    this.load.image("lamento", "./src/assets/png/lamentacion.png")
+    this.load.image("engranaje", "./src/assets/png/config2.png")
 };
 function create () {
     this.e1 = this.add.image(config.width /2+ 50, config.height / 2 +10, "engranaje")

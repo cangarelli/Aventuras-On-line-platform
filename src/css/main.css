@@ -63,44 +63,58 @@ h2 {
   background-attachment: local;
 }
 
-.hojaNotas, .cardBox, .consola, .container, .cartelito {
+.hojaNotas, .cardBox, .consola, .container, .windowPopUp {
   background-image: url(../assets/jpg/hoja-cartulina-2.jpg);
   background-attachment: fixed;
   background-size: 100% 100%;
 }
 
-.cardBox, .consola, .container, .cartelito {
+.cardBox, .consola, .container, .windowPopUp {
   border-radius: 15px;
   margin: 1% auto;
   padding: 3%;
   box-shadow: 8px 8px 10px gray;
 }
 
-.alert {
-  color: red;
-  text-align: center;
-  display: block;
-}
-
-.cartelito {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 8px 8px 10px gray;
+.centerWindow, .windowPopUp {
   transform-origin: center center;
   translate: -50% -50%;
   position: absolute;
   left: 50%;
   top: 50%;
 }
-.cartelito__pin {
-  min-width: 15px;
-  max-width: 20px;
-  margin-bottom: 15px;
-  transform: rotate(30deg);
+
+.alert {
+  color: red;
+  text-align: center;
+  padding: 5px;
 }
 
+.windowPopUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.windowPopUp p {
+  text-align: center;
+}
+.windowPopUp button {
+  padding: 3px 10px;
+  border-radius: 15%;
+}
+.windowPopUp__pin {
+  min-width: 15px;
+  max-width: 20px;
+  margin-bottom: 10px;
+  transform: rota te(30deg);
+}
+
+@media (min-width: 992px) {
+  .windowPopUp {
+    width: 992px;
+  }
+}
 .foot {
   display: flex;
   flex-direction: column;
@@ -124,10 +138,6 @@ h2 {
 .container {
   max-width: 75%;
 }
-.container img {
-  display: none;
-  position: absolute;
-}
 .container__form {
   display: flex;
   flex-direction: column;
@@ -144,8 +154,7 @@ h2 {
 .container__form--div input {
   border: 2px solid gray;
   transition: border 0.5s;
-  padding: 5%;
-  margin-left: 4px;
+  padding: 2%;
 }
 .container__form--div input:focus {
   border: 4px solid green;
@@ -173,14 +182,14 @@ h2 {
 }
 .consola__menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 95%;
 }
 .consola__menu--icon {
+  margin: 0px 15px;
   max-width: 50px;
-  display: block;
 }
 .consola__menu--icon:hover {
   max-width: 45px;
@@ -193,12 +202,8 @@ h2 {
   .container__form {
     margin: 5px 0;
   }
-  .container__form--div {
-    flex-direction: row;
-  }
   .container__form--div label {
     text-align: right;
-    width: 160px;
   }
   .container__form--fin {
     margin: 5px auto;
@@ -207,13 +212,6 @@ h2 {
 @media (min-width: 768px) {
   .container {
     position: relative;
-  }
-  .container img {
-    display: inline-block;
-    top: 30%;
-    left: -1%;
-    transform: rotate(-20deg) scale(0.7);
-    transition: transform 5s;
   }
 }
 

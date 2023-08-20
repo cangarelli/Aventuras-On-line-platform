@@ -37,7 +37,7 @@ cuerpo[0].addEventListener("click", (e) => {
             verAgenda();
             break; 
         case "salir": 
-            let select = document.getElementById ("banner");
+            let select = document.getElementById ("windowPopUp");
             select.remove();
             break;
     };
@@ -46,7 +46,7 @@ cuerpo[0].addEventListener("click", (e) => {
             logOut ();
             break;
         case "about":
-            makeItHapend ();
+            windowPopUp ("about");
             break;    
     }
 });

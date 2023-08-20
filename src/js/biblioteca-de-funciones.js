@@ -142,7 +142,7 @@ const registrarPersona = () => {
 
         // Mensaje de bienvenida.
         const ventana = document.getElementById  ("banner");
-        ventana == null && cartel ("bienvenida");
+        ventana == null && windowPopUp ("bienvenida");
 
         // Cerrar formulario 
         crearFormulario ("loguin")
@@ -160,7 +160,7 @@ const verAgenda = () => {
         agenda.push(`${objeto.nombre} tiene por correo: ${objeto.correo}. Le decimos ${objeto.apodo} y su contraseña ya es top secret, very secreta. No la revelaremos.`);
     });
     const ventana = document.getElementById  ("banner");
-    ventana == null && cartel (agenda);
+    ventana == null && windowPopUp (agenda);
 };    
 
 // FUNCIONES DE VERIFICACIÓN DE USUARIO
@@ -226,7 +226,7 @@ const logIn = () => {
 
         //Gestionar DOM
         if (screen.width <= 1100 || screen.height <= 576) {
-            cartel ("pantallaChica");
+            windowPopUp ("pantallaChica");
          } else {
             CrearConsola (); 
         }

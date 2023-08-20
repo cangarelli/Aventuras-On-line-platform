@@ -1,24 +1,31 @@
 .alert {
     color: red;
     text-align: center;
-    display: block;
+    padding: 5px;
 }
-.cartelito {
+.windowPopUp {
     @extend .cardBox;    
-    @include templateFlex (column, center, true);
-
-    box-shadow: 8px 8px 10px gray;
+    @include templateFlex (column, center, true); 
+    @extend .centerWindow;
     
-    transform-origin: center center;
-    translate: -50% -50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    
+        p {
+            text-align: center;
+        }
+        button {
+            padding: 3px 10px;
+            border-radius: 15%;
+        }
     
         &__pin {
             min-width: 15px;
             max-width: 20px;
-            margin-bottom: 15px;
-            transform: rotate(30deg);
+            margin-bottom: 10px;
+            transform: rota  te(30deg);
         }
+}
+@media (min-width: $bp-large) {
+    .windowPopUp{
+        width:992px;
+    }
 }
