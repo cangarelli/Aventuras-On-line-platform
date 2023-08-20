@@ -1,6 +1,6 @@
 * {
   font-family: "gochihand";
-  font-size: 16px;
+  font-size: 20px;
   color: gray;
   text-decoration: none;
   box-sizing: border-box;
@@ -88,6 +88,7 @@ h2 {
   color: red;
   text-align: center;
   padding: 5px;
+  margin: 0px;
 }
 
 .windowPopUp {
@@ -113,6 +114,11 @@ h2 {
 @media (min-width: 992px) {
   .windowPopUp {
     width: 992px;
+  }
+}
+@media (min-width: 1200px) {
+  .windowPopUp {
+    width: 1100px;
   }
 }
 .foot {
@@ -201,9 +207,6 @@ h2 {
   }
   .container__form {
     margin: 5px 0;
-  }
-  .container__form--div label {
-    text-align: right;
   }
   .container__form--fin {
     margin: 5px auto;
