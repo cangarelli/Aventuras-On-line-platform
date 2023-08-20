@@ -237,7 +237,6 @@ const logOut = () => {
     game = "";
     cuerpo[0].className = "container"
     cuerpo[0].innerHTML = 
-    `<h1>CURSO DE JAVASCRIPT.</h1>
-    <h2>Garelli Carlos Andrés | Proyecto final</h2>`;
+    `<h1>El mundo de las aventuras de Violeta</h1>`;
     crearFormulario ("loguin", false);
 };
