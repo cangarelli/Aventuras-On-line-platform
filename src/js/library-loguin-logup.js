@@ -214,17 +214,21 @@ const logIn = () => {
 
         //Gestionar DOM
         if (screen.width <= 1100 || screen.height <= 576) {
+            sessionStorage.removeItem ("usuarioLogueado");
             windowPopUp ("pantallaChica");
          } else {
-            CrearConsola (); 
+            const llave = document.getElementById ("log")
+            llave.id = "logOut"
+            crearConsola (); 
         }
     };
 };
 
 const logOut = () => {
     game = "";
-    mainBox.className = "container"
-    mainBox.innerHTML = 
-    `<h1>EL MUNDO DE AVENTURAS DE VIOLETA</h1>`;
+    sessionStorage.removeItem ("usuarioLogueado");
+    const llave = document.getElementById ("logOut");
+    llave.id = "log"
+    changeClass ({nodo: mainBox, classremove: "console", classadd: "logContainer"});
     crearFormulario ("loguin", false);
 };

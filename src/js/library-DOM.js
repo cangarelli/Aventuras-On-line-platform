@@ -1,5 +1,5 @@
 // Accesorios globales
-const changeClass = (nodo, classremove, classadd) => {
+const changeClass = ({nodo, classremove, classadd}) => {
   nodo.classList.remove (classremove);
   nodo.classList.add (classadd);
 };
@@ -26,10 +26,7 @@ const contentWriter = (father, message) =>{
       father.appendChild (welcome);
       const lamentaciones = document.createElement ("p");
       lamentaciones.innerHTML = `La consola esta disponible en pantallas que puedan soportar una resolución minima de 1100 x 576. Ingrese desde otro dispositivo`;
-      father.appendChild (lamentaciones);
-    
-     sessionStorage.removeItem ("usuarioLogueado");
-    
+      father.appendChild (lamentaciones);  
     break;
     case "about":
       father.width = 5000;
@@ -45,16 +42,6 @@ const contentWriter = (father, message) =>{
       <p>Habra oportunidades y desafíos para Conocer el propio cuerpo y experimentar con sus posibilidades. Abrirse para ser y expresarse a través del cuerpo, liberarlo, es Una manera de habitarse. </p>   
       <p>Para Violeta aventurarse es también reconectar consigo misma y tomar posición para vivir.</p>`;
       father.appendChild (content);
-      break;
-    default:
-      // ACTUALIZAR DIRECTORIO
-      directorio = sesionLoad ("directory");
-      //CREAR MENSAJE
-      for (const renglon of message) {
-        const agenda = document.createElement ("p");
-        agenda.innerHTML = `${renglon}`;
-        father.appendChild (agenda);
-      };
       break;
     };
 
@@ -98,15 +85,16 @@ const alerta = (id, location, mensaje) =>{
 };
 
 // Formularios desde el DOM.
-const crearFormulario = (finalidad, limpieza) => {
+const crearFormulario = (finalidad, limpieza) => { 
   // Limpieza
   if (limpieza != false) {
-    const aBorrar = document.getElementsByTagName ("form");
-    aBorrar[0].remove();
+    mainBox.innerHTML= ``;
   };
+  
+
   // Nuevo formulario
   const formulario = document.createElement ("form");
-  formulario.className = "container__form";
+  formulario.className = "logContainer__form";
   formulario.action ="php";
   formulario.method ="post";
   formulario.enctype ="text/plain";
@@ -114,42 +102,43 @@ const crearFormulario = (finalidad, limpieza) => {
   if (finalidad == "crearCuenta") {
     formulario.id = "newUser";
     formulario.innerHTML = 
-    `<div class="container__form--div">
+    `<h1>CREA TU CUENTA Y VOLVETE PARTE DEL MUNDO DE VIOLETA</h1>
+    <div class="logContainer__form--div">
       <label for="email">Correo Electronico:</label> 
       <input type="email" placeholder="Inclui el @" id="email"/>
     </div>
-    <div class="container__form--div">
+    <div class="logContainer__form--div">
       <label for="nombreYApellido">Nombre y apeliido:</label>
       <input type="text" placeholder="Nombre y apellido" id="nombreYApellido" />
     </div>
-    <div class="container__form--div">
+    <div class="logContainer__form--div">
       <label for="Apodo">Nombre de jugador:</label>
       <input type="text" placeholder="Tu apodo en el juego" id="apodo" />
     </div>
-    <div class="container__form--div">
+    <div class="logContainer__form--div">
       <label for="contraseña">Contraseña:</label>
       <input type="password" placeholder="TOP SECRET" id="contraseña"/>
     </div>
-    <div class="container__form--div">
+    <div class="logContainer__form--div">
       <label for="confirmarContraseña">Connfirmar contraseña:</label>
       <input type="password" placeholder="Confirm - VERY TOP SECRET" id="confirmarContraseña" />
     </div>
-    <section class="container__form--fin">
+    <section class="logContainer__form--fin">
       <input type="button" value="Volver" />
       <input type="submit" value="Crear cuenta" />
     </section>`;
   } else if (finalidad == "loguin") {
     formulario.innerHTML = 
-    `<h2>LOGUEATE Y EMPEZA TU AVENTURA.</h2>   
-    <div class="container__form--div">
+    `<h1>LOGUEATE Y EMPEZA TU AVENTURA.</h1>   
+    <div class="logContainer__form--div">
       <label for="correoIn">Correo Electronico</label>
       <input type="text" placeholder="Inclui el @" id="correoIn" />
     </div>
-    <div class="container__form--div">
+    <div class="logContainer__form--div">
       <label for="contraseñaIn">Contraseña</label>
       <input type="password" placeholder="top secret" name="" id="contraseñaIn" />
     </div>
-    <section class="container__form--fin">
+    <section class="logContainer__form--fin">
       <input type="button" value="Registrarme" />
       <input type="button" value="Iniciar sesión" />
     </section>`;

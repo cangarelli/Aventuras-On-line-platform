@@ -14,18 +14,28 @@ const config = {
 };
 
 // CREAR CONSOLA
-const CrearConsola = () => {
+const crearConsola = () => {
     const user = sesionLoad("usuarioLogueado");
-    mainBox.className = "consola";
+    
+    // Cambios nav bar
+    const boton = document.createElement ("img")
+    boton.className = "consolContainer__menu--icon";
+    boton.src = "./src/assets/png/icon-about.png";
+    boton.alt="Acerca del juego";
+    boton.id = "about";
+    menuNavBar.appendChild (boton)
+
+
+
+    //cambios mainBox
+    changeClass ({nodo: mainBox, classremove: "logConteiner", classadd: "consolContainer"});
     mainBox.innerHTML = 
-    `<div class= "consola__menu">
+    `<div class= "consolContainer__menu">
         <h2>¡¡BIENVENIDO ${user.apodo.toUpperCase()}!!</h2>
-        <div>
-            <img class="consola__menu--icon" id= "about" src="./src/assets/png/icon-about.png" alt="Acerca del juego" /> 
-            <img class="consola__menu--icon" id= "exit" src="./src/assets/png/icon-key.png" alt="Desloguearme" />
-        </div>
     </div>
     <div id="game"></div>`;
+
+    //Ejecucion de consola
     game = new Phaser.Game (config);
 };
 

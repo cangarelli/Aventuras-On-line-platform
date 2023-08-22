@@ -2,9 +2,9 @@
 menuNavBar.addEventListener("click", (e) => {
     switch (e.target.id) {
         case "log":
+            changeClass ({nodo: mainBox, classremove: "container", classadd: "logContainer"});
             crearFormulario ("loguin");
             break;
-    
         case "logOut":
             logOut ();
             break;

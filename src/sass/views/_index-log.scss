@@ -1,4 +1,4 @@
-.container {
+.logContainer {
     @extend .cardBox;
     max-width: 75%;
 
@@ -33,25 +33,7 @@
         }              
     }
 }
-.consola{
-    @extend .cardBox;
-    width: 95%;
-    min-width: 1024px;
-    max-width: 1100px;
 
-        &__menu {
-            @include templateFlex (row, space-between, true);
-            width: 95%;
-               
-                &--icon{
-                    margin: 0px 15px;
-                    max-width: 50px;
-                }
-                &--icon:hover{
-                    max-width: 45px;
-                }
-        }
-}
 
 @media (min-width: $bp-small) {
     .container {
