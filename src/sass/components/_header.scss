@@ -1,0 +1,35 @@
+.barranav {
+    background-image: url(../assets/jpg/fondo-navbar.jpg);
+    background-size: cover ; 
+    background-attachment: fixed;
+
+    &__img{
+        min-width: 120px;
+        max-width: 130px;
+        width: 15vw; 
+        padding: 10px;
+        border-radius: 10px;        
+        @extend .hojaMenu;
+        box-shadow: 6px 6px 8px black;
+        
+        &:hover{
+            box-shadow: 6px 6px 8px violet;
+        }
+    }
+
+    &__ico{
+        border-radius: 10px;
+        padding-top: 2px;
+        padding-left: 2px;
+        padding-bottom: 5px;
+        padding-right: 5px;    
+        @extend .hojaMenu;
+
+        &:hover{
+            min-width: 15px;
+            width: 2.5vw;
+            height: 35px;
+        }
+    }
+}
+

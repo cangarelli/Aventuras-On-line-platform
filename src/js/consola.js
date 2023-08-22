@@ -16,8 +16,8 @@ const config = {
 // CREAR CONSOLA
 const CrearConsola = () => {
     const user = sesionLoad("usuarioLogueado");
-    cuerpo[0].className = "consola";
-    cuerpo[0].innerHTML = 
+    mainBox.className = "consola";
+    mainBox.innerHTML = 
     `<div class= "consola__menu">
         <h2>¡¡BIENVENIDO ${user.apodo.toUpperCase()}!!</h2>
         <div>

@@ -1,4 +1,9 @@
 // Accesorios globales
+const changeClass = (nodo, classremove, classadd) => {
+  nodo.classList.remove (classremove);
+  nodo.classList.add (classadd);
+};
+
 const infoWindow = (father) =>{
   const window = document.createElement ("section");
   window.id = "windowPopUp";
@@ -72,7 +77,7 @@ const closeButton = (father) => {
 //  FUNCIONES DE MENSAJE.
 const windowPopUp = (message) =>{
   // CREAR BANNER
-  infoWindow (cuerpo[0]);
+  infoWindow (mainBox);
   const select = document.getElementById ("windowPopUp");
   
   //DECORANDING
@@ -132,7 +137,6 @@ const crearFormulario = (finalidad, limpieza) => {
     <section class="container__form--fin">
       <input type="button" value="Volver" />
       <input type="submit" value="Crear cuenta" />
-      <input id="borrable" type="button" value="Ver agenda" />
     </section>`;
   } else if (finalidad == "loguin") {
     formulario.innerHTML = 
@@ -150,7 +154,7 @@ const crearFormulario = (finalidad, limpieza) => {
       <input type="button" value="Iniciar sesión" />
     </section>`;
   };
-  cuerpo[0].appendChild (formulario);
+  mainBox.appendChild (formulario);
 };
 
 // Desplegables del menu consola.

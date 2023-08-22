@@ -151,18 +151,6 @@ const registrarPersona = () => {
     };
 };
 
-// FUNCIÓN DE CONTROL
-const verAgenda = () => {
-    let agenda = [];
-    agenda.push("La siguiente es una lista de los usuarios registrados hasta la fecha en el directorio de la aplicación:");
-    directorio = sesionLoad ("directory");
-    directorio.forEach(objeto => {
-        agenda.push(`${objeto.nombre} tiene por correo: ${objeto.correo}. Le decimos ${objeto.apodo} y su contraseña ya es top secret, very secreta. No la revelaremos.`);
-    });
-    const ventana = document.getElementById  ("banner");
-    ventana == null && windowPopUp (agenda);
-};    
-
 // FUNCIONES DE VERIFICACIÓN DE USUARIO
 const verfyMail = () => {
     // Variables de la funcion
@@ -235,8 +223,8 @@ const logIn = () => {
 
 const logOut = () => {
     game = "";
-    cuerpo[0].className = "container"
-    cuerpo[0].innerHTML = 
-    `<h1>El mundo de las aventuras de Violeta</h1>`;
+    mainBox.className = "container"
+    mainBox.innerHTML = 
+    `<h1>EL MUNDO DE AVENTURAS DE VIOLETA</h1>`;
     crearFormulario ("loguin", false);
 };
