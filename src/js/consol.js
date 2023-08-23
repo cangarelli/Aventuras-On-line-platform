@@ -19,16 +19,17 @@ const crearConsola = () => {
     
     // Cambios nav bar
     const boton = document.createElement ("img")
-    boton.className = "consolContainer__menu--icon";
+    boton.className = "barranav--icon";
     boton.src = "./src/assets/png/icon-about.png";
     boton.alt="Acerca del juego";
     boton.id = "about";
     menuNavBar.appendChild (boton)
 
-
-
     //cambios mainBox
-    changeClass ({nodo: mainBox, classremove: "logConteiner", classadd: "consolContainer"});
+    
+    mainBox.className == "logContainer" && changeClass ({nodo: mainBox, classremove: "logContainer", classadd: "consolContainer"});
+    
+
     mainBox.innerHTML = 
     `<div class= "consolContainer__menu">
         <h2>¡¡BIENVENIDO ${user.apodo.toUpperCase()}!!</h2>

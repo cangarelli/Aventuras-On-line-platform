@@ -8,4 +8,6 @@
 @import "./components/footer";
 
 // views
-@import "./views/index"
+@import "./views/index-base";
+@import "./views/index-log";
+@import "./views/index-consol";

@@ -1,3 +1,21 @@
+// Variables globales que requieren lectura postcodigo
+
+
+console.log (mainBox.className)
+
+// filtro loguin check
+const isLogued = () => {
+    const userLogued = sesionLoad("usuarioLogueado");
+    if (mainBox.className == "container" && userLogued.correo != null) {
+        const llave = document.getElementById ("log")
+        llave.id = "logOut"
+        console.log (mainBox.className == "container")
+        mainBox.className == "container" && changeClass ({nodo: mainBox, classremove: "container", classadd: "consolContainer"});
+        crearConsola ();
+    };
+};
+isLogued();
+
 //  NAV BAR - ESCUCHA DE EVENTOS Y CONTROL ONLINE
 menuNavBar.addEventListener("click", (e) => {
     switch (e.target.id) {
@@ -8,6 +26,9 @@ menuNavBar.addEventListener("click", (e) => {
         case "logOut":
             logOut ();
             break;
+        case "about":
+            windowPopUp ("about");
+            break;    
     }
 });
 // MAIN ----- ESCUCHA DE EVENTOS Y CONTROL ONLINE
@@ -50,12 +71,4 @@ mainBox.addEventListener("click", (e) => {
             select.remove();
             break;
     };
-    switch (e.target.id) {
-        case "exit":
-            logOut ();
-            break;
-        case "about":
-            windowPopUp ("about");
-            break;    
-    }
 });

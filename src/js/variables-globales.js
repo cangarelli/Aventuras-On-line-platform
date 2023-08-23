@@ -5,6 +5,6 @@ let game = "";
 
 // NODOS globales
 const baseBox = document.getElementsByTagName ("div");
-const menuNavBar = baseBox [0];
-const mainBox = baseBox [1];
+const menuNavBar = baseBox[1];
+const mainBox = baseBox[3];
 const grilla = document.getElementsByClassName ("container__form--div");

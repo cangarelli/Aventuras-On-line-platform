@@ -17,19 +17,18 @@
         }
     }
 
-    &__ico{
-        border-radius: 10px;
-        padding-top: 2px;
-        padding-left: 2px;
-        padding-bottom: 5px;
-        padding-right: 5px;    
-        @extend .hojaMenu;
+    &--icon{
+        margin: 0px 15px;
+        max-width: 50px;
+        max-height: 45px;
 
-        &:hover{
-            min-width: 15px;
+        &:hover {
+            min-width: 25px;
+            max-width: 48px;
             width: 2.5vw;
-            height: 35px;
+            max-height: 40px;
         }
     }
+
 }
 

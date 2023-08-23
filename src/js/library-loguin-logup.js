@@ -229,6 +229,9 @@ const logOut = () => {
     sessionStorage.removeItem ("usuarioLogueado");
     const llave = document.getElementById ("logOut");
     llave.id = "log"
-    changeClass ({nodo: mainBox, classremove: "console", classadd: "logContainer"});
-    crearFormulario ("loguin", false);
+    const buttonAbout = document.getElementById ("about");
+    console.log (buttonAbout.id)
+    buttonAbout.remove();
+    changeClass ({nodo: mainBox, classremove: "consolContainer", classadd: "logContainer"});
+    crearFormulario ("loguin");
 };

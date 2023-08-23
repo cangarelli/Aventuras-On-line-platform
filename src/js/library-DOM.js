@@ -1,5 +1,6 @@
 // Accesorios globales
 const changeClass = ({nodo, classremove, classadd}) => {
+  console.log (`check ${nodo.className}`)
   nodo.classList.remove (classremove);
   nodo.classList.add (classadd);
 };
@@ -85,12 +86,9 @@ const alerta = (id, location, mensaje) =>{
 };
 
 // Formularios desde el DOM.
-const crearFormulario = (finalidad, limpieza) => { 
+const crearFormulario = (finalidad) => { 
   // Limpieza
-  if (limpieza != false) {
     mainBox.innerHTML= ``;
-  };
-  
 
   // Nuevo formulario
   const formulario = document.createElement ("form");

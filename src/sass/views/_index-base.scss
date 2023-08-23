@@ -1,0 +1,19 @@
+.container {
+    @extend .cardBox;
+    margin: 2% auto;
+    @include templateFlex (column, center, true);
+    width: 70%;
+    height: 60vh;
+    
+    img {
+        margin-top: 50px;
+    }
+    p{
+        font-size: $font-text;
+        font-stretch: 1.5;
+        text-align: center;
+        text-indent: 10px;
+        line-height: 1.5;
+    }
+
+}

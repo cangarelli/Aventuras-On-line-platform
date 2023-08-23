@@ -7,13 +7,6 @@
         &__menu {
             @include templateFlex (row, space-between, true);
             width: 95%;
-               
-                &--icon{
-                    margin: 0px 15px;
-                    max-width: 50px;
-                }
-                &--icon:hover{
-                    max-width: 45px;
-                }
+
         }
 }
