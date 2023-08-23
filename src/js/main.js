@@ -9,6 +9,11 @@ const isLogued = () => {
         // Gestion de contenedor padre
         mainBox.className == "container" && changeClass ({nodo: mainBox, classremove: "container", classadd: "consolContainer"});
         crearConsola ();
+    } else {
+        setTimeout(() => {
+            const papa = document.getElementsByClassName ("container__portaFoto")
+            colocarPîn (papa[0], "container__portaFoto--pin");
+        }, 4000);
     };
 };
 isLogued();

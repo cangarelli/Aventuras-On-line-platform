@@ -51,9 +51,9 @@ const contentWriter = (father, message) =>{
 
 };
 
-const colocarPîn = (father) =>{
+const colocarPîn = (father, clase) =>{
   const decoracion = document.createElement ("img");
-  decoracion.className = "windowPopUp__pin";
+  decoracion.className = clase;
   decoracion.src = "./src/assets/png/Pin.png";
   father.appendChild (decoracion);
 };
@@ -72,7 +72,7 @@ const windowPopUp = (message) =>{
   const select = document.getElementById ("windowPopUp");
   
   //DECORANDING
-  colocarPîn (select);
+  colocarPîn (select, "windowPopUp__pin");
 
   // MENSAJES POSIBLES
   contentWriter (select, message);

@@ -84,6 +84,25 @@ h2 {
   top: 50%;
 }
 
+@keyframes ideas {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes ponerFoto {
+  from {
+    transform: rotate(0deg) translate(0px) scale(1);
+  }
+  to {
+    transform: rotate(20deg) translate(20px) scale(0.7);
+  }
+}
 .alert {
   color: red;
   text-align: center;
@@ -178,8 +197,21 @@ h2 {
   width: 70%;
   height: 60vh;
 }
-.container img {
-  margin-top: 50px;
+.container__portaFoto {
+  position: relative;
+}
+.container__portaFoto--foto {
+  margin-top: 20px;
+  animation: ponerFoto 4s forwards;
+}
+.container__portaFoto--pin {
+  min-width: 5px;
+  max-width: 20px;
+  margin-bottom: 0px;
+  transform: rota te(30deg);
+  position: absolute;
+  top: 15%;
+  left: 40%;
 }
 .container p {
   font-size: 18px;
@@ -190,7 +222,7 @@ h2 {
 }
 
 .logContainer {
-  max-width: 75%;
+  max-width: 80%;
 }
 .logContainer__form {
   display: flex;
@@ -229,20 +261,15 @@ h2 {
   border-radius: 5px;
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 80%;
+@media (min-width: 768px) {
+  .logContainer {
+    max-width: 50%;
   }
-  .container__form {
+  .logContainer__form {
     margin: 5px 0;
   }
-  .container__form--fin {
+  .logContainer__form--fin {
     margin: 5px auto;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    position: relative;
   }
 }
 .consolContainer {

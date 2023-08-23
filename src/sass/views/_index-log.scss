@@ -1,6 +1,6 @@
 .logContainer {
     @extend .cardBox;
-    max-width: 75%;
+    max-width: 80%;
 
     &__form {
         @include templateFlex (column, center, true);
@@ -35,26 +35,14 @@
 }
 
 
-@media (min-width: $bp-small) {
-    .container {
-        max-width: 80%;
+@media (min-width: $bp-medium) {
+    .logContainer {
+        max-width: 50%;
         &__form{
             margin: 5px 0;
             &--fin {
                 margin: 5px auto;
             }
         }
-    }
-}
-@media (min-width: $bp-medium) {
-    .container {
-        position: relative;
-        // img{
-        //     display: inline-block;
-        //     top: 30%;
-        //     left: -1%;
-        //     transform: rotate(-20deg) scale(0.7);
-        //     transition: transform 5s;
-        // }
     }
 }
