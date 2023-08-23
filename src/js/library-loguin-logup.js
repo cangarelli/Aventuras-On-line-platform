@@ -114,7 +114,7 @@ const sesionLoad = (clave) => {
 // FUNCION DE REGISTRO.
 const registrarPersona = () => {
     // Recuperar inputs
-    const pass1 = document.getElementById ("contraseña");
+    const pass1 = document.getElementById ("password");
     const passcheck = document.getElementById ("confirmarContraseña");
     const mail = document.getElementById ("email");
     const user = document.getElementById ("nombreYApellido");
@@ -141,7 +141,7 @@ const registrarPersona = () => {
         enviarCorreo ();
 
         // Mensaje de bienvenida.
-        const ventana = document.getElementById  ("banner");
+        const ventana = document.getElementById  ("windowPopUp");
         ventana == null && windowPopUp ("bienvenida");
 
         // Cerrar formulario 
@@ -217,21 +217,23 @@ const logIn = () => {
             sessionStorage.removeItem ("usuarioLogueado");
             windowPopUp ("pantallaChica");
          } else {
-            const llave = document.getElementById ("log")
-            llave.id = "logOut"
+            changeId ("log", "logOut")
             crearConsola (); 
         }
     };
 };
 
 const logOut = () => {
+    // Gestion de variables
     game = "";
     sessionStorage.removeItem ("usuarioLogueado");
-    const llave = document.getElementById ("logOut");
-    llave.id = "log"
+
+    // Gestion de botones
+    changeId ("logOut", "log")
     const buttonAbout = document.getElementById ("about");
-    console.log (buttonAbout.id)
     buttonAbout.remove();
+    
+    //  Gestion de nodo padre
     changeClass ({nodo: mainBox, classremove: "consolContainer", classadd: "logContainer"});
     crearFormulario ("loguin");
 };

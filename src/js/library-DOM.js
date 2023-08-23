@@ -1,8 +1,11 @@
 // Accesorios globales
 const changeClass = ({nodo, classremove, classadd}) => {
-  console.log (`check ${nodo.className}`)
   nodo.classList.remove (classremove);
   nodo.classList.add (classadd);
+};
+const changeId = (actualId, newId) => {
+  const llave = document.getElementById (actualId);
+  llave.id = newId;
 };
 
 const infoWindow = (father) =>{
@@ -114,8 +117,8 @@ const crearFormulario = (finalidad) => {
       <input type="text" placeholder="Tu apodo en el juego" id="apodo" />
     </div>
     <div class="logContainer__form--div">
-      <label for="contraseña">Contraseña:</label>
-      <input type="password" placeholder="TOP SECRET" id="contraseña"/>
+      <label for="password">Contraseña:</label>
+      <input type="password" placeholder="TOP SECRET" id="password"/>
     </div>
     <div class="logContainer__form--div">
       <label for="confirmarContraseña">Connfirmar contraseña:</label>
@@ -143,6 +146,3 @@ const crearFormulario = (finalidad) => {
   };
   mainBox.appendChild (formulario);
 };
-
-// Desplegables del menu consola.
-

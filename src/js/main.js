@@ -1,15 +1,12 @@
-// Variables globales que requieren lectura postcodigo
-
-
-console.log (mainBox.className)
-
-// filtro loguin check
+// Contol de loguin
 const isLogued = () => {
     const userLogued = sesionLoad("usuarioLogueado");
     if (mainBox.className == "container" && userLogued.correo != null) {
+        // Gestion de llave
         const llave = document.getElementById ("log")
         llave.id = "logOut"
-        console.log (mainBox.className == "container")
+        
+        // Gestion de contenedor padre
         mainBox.className == "container" && changeClass ({nodo: mainBox, classremove: "container", classadd: "consolContainer"});
         crearConsola ();
     };
@@ -43,11 +40,11 @@ mainBox.addEventListener("change", (e) => {
             break;
         case "apodo":
             break;
-        case "contraseña":
+        case "password":
             controlPassUno (e.target.value);
             break;
         case "confirmarContraseña":
-            pass1 = document.getElementById ("contraseña") 
+            pass1 = document.getElementById ("password") 
             registrarContraseña(pass1.value,e.target.value);
             break;
     };

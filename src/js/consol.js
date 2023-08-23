@@ -25,11 +25,9 @@ const crearConsola = () => {
     boton.id = "about";
     menuNavBar.appendChild (boton)
 
-    //cambios mainBox
-    
+    // Gestion de contenedor padre
     mainBox.className == "logContainer" && changeClass ({nodo: mainBox, classremove: "logContainer", classadd: "consolContainer"});
     
-
     mainBox.innerHTML = 
     `<div class= "consolContainer__menu">
         <h2>¡¡BIENVENIDO ${user.apodo.toUpperCase()}!!</h2>
