@@ -1,0 +1,1 @@
+Respositorio de muestra con bocetos de base del proyecto "Aventuras de Violeta"

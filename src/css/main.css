@@ -63,20 +63,20 @@ h2 {
   background-attachment: local;
 }
 
-.hojaNotas, .cardBox, .consolContainer, .logContainer, .container, .windowPopUp {
+.hojaNotas, .cardBox, .consolContainer, .logContainer, .container, .infoWindow, .windowPopUp {
   background-image: url(../assets/jpg/hoja-cartulina-2.jpg);
   background-attachment: fixed;
   background-size: 100% 100%;
 }
 
-.cardBox, .consolContainer, .logContainer, .container, .windowPopUp {
+.cardBox, .consolContainer, .logContainer, .container, .infoWindow, .windowPopUp {
   border-radius: 15px;
   margin: 1% auto;
   padding: 3%;
   box-shadow: 8px 8px 10px gray;
 }
 
-.centerWindow, .windowPopUp {
+.centerWindow, .infoWindow, .windowPopUp {
   transform-origin: center center;
   translate: -50% -50%;
   position: absolute;
@@ -124,6 +124,26 @@ h2 {
   border-radius: 15%;
 }
 .windowPopUp__pin {
+  min-width: 15px;
+  max-width: 20px;
+  margin-bottom: 10px;
+  transform: rota te(30deg);
+}
+
+.infoWindow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infoWindow p {
+  text-align: center;
+}
+.infoWindow button {
+  padding: 3px 10px;
+  border-radius: 15%;
+}
+.infoWindow__pin {
   min-width: 15px;
   max-width: 20px;
   margin-bottom: 10px;

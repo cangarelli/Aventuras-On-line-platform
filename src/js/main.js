@@ -29,7 +29,7 @@ menuNavBar.addEventListener("click", (e) => {
             logOut ();
             break;
         case "about":
-            windowPopUp ("about");
+            windowPopUp ("about", "infoWindow");
             break;    
     }
 });

@@ -142,7 +142,8 @@ const registrarPersona = () => {
 
         // Mensaje de bienvenida.
         const ventana = document.getElementById  ("windowPopUp");
-        ventana == null && windowPopUp ("bienvenida");
+        console.log (ventana.id)
+        ventana == null && windowPopUp ("bienvenida", "windowPopUp" );
 
         // Cerrar formulario 
         crearFormulario ("loguin")
@@ -215,7 +216,7 @@ const logIn = () => {
         //Gestionar DOM
         if (screen.width <= 1100 || screen.height <= 576) {
             sessionStorage.removeItem ("usuarioLogueado");
-            windowPopUp ("pantallaChica");
+            windowPopUp ("pantallaChica", "windowPopUp");
          } else {
             changeId ("log", "logOut")
             crearConsola (); 

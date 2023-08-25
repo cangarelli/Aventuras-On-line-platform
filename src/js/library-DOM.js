@@ -8,10 +8,10 @@ const changeId = (actualId, newId) => {
   llave.id = newId;
 };
 
-const infoWindow = (father) =>{
+const infoWindow = (father, type) =>{
   const window = document.createElement ("section");
   window.id = "windowPopUp";
-  window.className = "windowPopUp";
+  window.className = type;
   father.appendChild (window);
 };
 
@@ -24,9 +24,9 @@ const contentWriter = (father, message) =>{
       break;
     case "pantallaChica":
       const valor = sesionLoad("usuarioLogueado");
- 
-      const welcome = document.createElement ("h2");
-      welcome.innerHTML = `¡¡BIENVENIDO ${valor.apodo.toUpperCase()}!!`;
+      
+      const welcome = document.createElement ("h2"); 
+      welcome.innerHTML = `¡¡BIENVENIDO ${valor[0].apodo.toUpperCase()}!!`;
       father.appendChild (welcome);
       const lamentaciones = document.createElement ("p");
       lamentaciones.innerHTML = `La consola esta disponible en pantallas que puedan soportar una resolución minima de 1100 x 576. Ingrese desde otro dispositivo`;
@@ -66,13 +66,13 @@ const closeButton = (father) => {
 };
 
 //  FUNCIONES DE MENSAJE.
-const windowPopUp = (message) =>{
+const windowPopUp = (message, type) =>{
   // CREAR BANNER
-  infoWindow (mainBox);
+  infoWindow (mainBox, type);
   const select = document.getElementById ("windowPopUp");
   
   //DECORANDING
-  colocarPîn (select, "windowPopUp__pin");
+  colocarPîn (select, `${type}__pin`);
 
   // MENSAJES POSIBLES
   contentWriter (select, message);
